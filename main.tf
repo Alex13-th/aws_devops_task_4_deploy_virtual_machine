@@ -34,7 +34,7 @@ resource "aws_key_pair" "deploy_key" {
 
 resource "aws_instance" "this" {
   ami           = data.aws_ami.this.id
-  instance_type = "t3.micro"   # У регіоні (eu-north-1) інстанс типу t2.micro більше не входить у Free Tier
+  instance_type = "t2.micro"   # У регіоні (eu-north-1) інстанс типу t2.micro більше не входить у Free Tier
   associate_public_ip_address = true
   subnet_id = var.subnet_id
   vpc_security_group_ids = [var.security_group_id]
